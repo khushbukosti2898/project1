@@ -1,0 +1,27 @@
+.form{
+    box-shadow: 5px 10px 5px 10px gray;
+    padding:20px;
+    background-color: white;
+    /* background-image: linear-gradient(to bottom, blue , skyblue); */
+    border-radius: 15px;
+    background-origin: 1px solid black;
+    width: 50%;
+}
+
+.formParent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 13%;
+    // margin-left: 25%;
+}
+body{
+    /* background-image: linear-gradient(to left, white , gray); */
+    // background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);    
+    // background-image: url(../assests/images/logo_bg.png);
+    // background-repeat: no-repeat;
+}
+.error{
+    color: red;
+}
