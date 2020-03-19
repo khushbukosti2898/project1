@@ -11,13 +11,18 @@ import swal from 'sweetalert';
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             firstName: '',
             lastName: '',
             email: '',
             password: '',
             data: '',
+            token: '',
+            personID:"",
+            companyType:{} ,
+            roleCode:"" ,
+            roleCode: "",
             error: {
                 email: '',
                 password: ''
@@ -25,8 +30,8 @@ class Login extends React.Component {
         }
     }
 
-    componentWillMount(){
-        if (localStorage.getItem("email"))
+    componentWillMount() {
+        if (localStorage.getItem("token"))
             this.props.history.push('/dashboard');
     }
 
@@ -74,26 +79,35 @@ class Login extends React.Component {
                 password: password
             })
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     this.setState({
                         data: response.data.data,
                         firsName: response.data.data.personData.firstName,
                         lastName: response.data.data.personData.lastName,
+                        token: response.data.data.token,
+                        personID: response.data.data.personData.id,
+                        companyType: response.data.data.personData.company,
+                        roleCode: response.data.data.personData.roleCode,
+                        createdByPerson: response.data.data.personData.createdByPerson,
                         errorMessage: '',
-
                     })
-                    console.log(response.data.data.personData.firstName)
                     swal({
                         title: "Login Success",
                         icon: "success",
                         timer: 1000,
-                        buttons:false,
+                        buttons: false,
                     })
                     if (email !== '' && password !== '') {
                         localStorage.setItem('email', email);
                         localStorage.setItem('password', password);
                         localStorage.setItem('firstName', this.state.firsName)
                         localStorage.setItem('lastName', this.state.lastName)
+                        localStorage.setItem('personID', this.state.personID)
+                        localStorage.setItem('companyType', this.state.companyType)
+                        localStorage.setItem('roleCode', this.state.roleCode)
+                        localStorage.setItem('createdByPerson', this.state.createdByPerson)
+                        localStorage.setItem('token', this.state.token)
+                        // localStorage.setItem("personID",personID)
                         this.props.history.push('/dashboard');
                     }
                 })
