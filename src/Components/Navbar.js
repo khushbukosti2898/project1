@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                             </span>
                         </NavDropdown.Item>
 
-                        <NavDropdown.Item href="#action/3.2">
+                        <NavDropdown.Item href="/add-campaign">
                             <span className="text-primary pl-1">
                                 <FontAwesomeIcon icon={faPlus} />
                                 <span className="text-dark">Campaigns</span>

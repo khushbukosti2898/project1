@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
-import { Input } from '../Components/CommonInput';
+import { Input } from './CommonInput';
 import '../CSS/login.css.scss';
 import axios from 'axios';
 import seedRadioLogo from '../assests/images/seeRadiioLogo..png';
@@ -20,9 +20,8 @@ class Login extends React.Component {
             data: '',
             token: '',
             personID:"",
-            companyType:{} ,
+            companyType:'',
             roleCode:"" ,
-            roleCode: "",
             error: {
                 email: '',
                 password: ''
@@ -79,14 +78,14 @@ class Login extends React.Component {
                 password: password
             })
                 .then((response) => {
-                    // console.log(response);
+                    // console.log(response.data.data.personData.company);
                     this.setState({
                         data: response.data.data,
                         firsName: response.data.data.personData.firstName,
                         lastName: response.data.data.personData.lastName,
                         token: response.data.data.token,
                         personID: response.data.data.personData.id,
-                        companyType: response.data.data.personData.company,
+                        companyType: response.data.data.personData.company.companyType,
                         roleCode: response.data.data.personData.roleCode,
                         createdByPerson: response.data.data.personData.createdByPerson,
                         errorMessage: '',
@@ -98,6 +97,7 @@ class Login extends React.Component {
                         buttons: false,
                     })
                     if (email !== '' && password !== '') {
+                        
                         localStorage.setItem('email', email);
                         localStorage.setItem('password', password);
                         localStorage.setItem('firstName', this.state.firsName)
@@ -107,7 +107,6 @@ class Login extends React.Component {
                         localStorage.setItem('roleCode', this.state.roleCode)
                         localStorage.setItem('createdByPerson', this.state.createdByPerson)
                         localStorage.setItem('token', this.state.token)
-                        // localStorage.setItem("personID",personID)
                         this.props.history.push('/dashboard');
                     }
                 })
@@ -120,8 +119,7 @@ class Login extends React.Component {
                 });
         }
     }
-
-
+    
     render() {
         let { email, password } = this.state.error
         return (<>

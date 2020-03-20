@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/home.scss';
+import ClientContract from './ClientContract'
 
 class Home extends React.Component {
 	constructor(props) {
@@ -12,7 +13,7 @@ class Home extends React.Component {
 
 	render() {
 		return (<>
-		Home		
+		<ClientContract/>		
 		</>)
 	}
 }

@@ -58,7 +58,7 @@ export class CheckBox extends React.Component {
 Input.defaultProps = {
   type: "text",
   style: {
-    margin: "10px",
+    margin: "10px 10px 10px 0",
   },
   isRequired: false,
 }

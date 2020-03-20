@@ -4,6 +4,7 @@ import Home from './home';
 import 'react-toastify/dist/ReactToastify.css';
 import Login from './login';
 import ClientContract from './ClientContract';
+import campaign from './campaign'
 import PrivateRoute from '../PrivateRoute';
 import PublicRoute from '../PublicRoute'
 // import { Provider } from 'react-redux';
@@ -21,6 +22,7 @@ class App extends React.Component {
         <PublicRoute path="/login" component={Login} />
         <PrivateRoute path="/dashboard" component={Home} />
         <PrivateRoute extact path="/client-contact" component={ClientContract} />
+        <PrivateRoute extact path="/add-campaign" component={campaign} />
       </Switch>
       {/* <Redirect to='/login' /> */}
     </Router>)
