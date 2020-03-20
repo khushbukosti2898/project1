@@ -3,6 +3,9 @@ import { PropTypes } from 'prop-types';
 import { Form } from 'react-bootstrap';
 import '../CSS/login.css.scss';
 import Select from 'react-select';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 export function Input(props) {
   const { title, isRequired, disabled, className, name, type, value, style, placeholder,
@@ -50,6 +53,37 @@ export class CheckBox extends React.Component {
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label={label}
           onChange={onChange}
+        />
+      </Form.Group>
+    </>)
+  }
+}
+
+export class TextArea extends React.Component {
+  render() {
+    let { title, isRequired } = this.props
+    return (<>
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <b>{title}</b>{isRequired && <span style={{ color: "red" }}>*</span>}
+        <Form.Control as="textarea" rows="3" />
+      </Form.Group>
+    </>)
+  }
+}
+
+
+export class Date extends React.Component {
+  render() {
+    let { title,dateFormat, isRequired ,selected} = this.props
+    return (<>
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <b>{title}</b>{isRequired && <span style={{ color: "red" }}>*</span>}
+        <DatePicker
+        isRequired={isRequired}
+          selected={selected}
+          dateFormat={dateFormat}
+          // onSelect={this.handleSelect} //when day is clicked
+          // onChange={this.handleChange} //only when value has changed
         />
       </Form.Group>
     </>)

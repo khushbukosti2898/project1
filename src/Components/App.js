@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './home';
 import 'react-toastify/dist/ReactToastify.css';
 import Login from './login';
-import ClientContract from './ClientContract';
-import campaign from './campaign'
+import ClientContract from './ClientContact/ClientContract';
+import campaign from './Campaign/campaign'
 import PrivateRoute from '../PrivateRoute';
 import PublicRoute from '../PublicRoute'
 // import { Provider } from 'react-redux';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Header from '../src/Components/Header';
-import NavBar from '../src/Components/Navbar'
+import Header from './Components/layout/Header';
+import NavBar from './Components/layout/Navbar'
 
 const isLogin = () => {
     let flag = '';

@@ -1,9 +1,9 @@
 import React from 'react';
-import '../CSS/home.scss';
-import seedRadioLogo from '../assests/images/seeRadiioLogo..png';
+import './CSS/home.scss';
+import seedRadioLogo from './images/seeRadiioLogo..png';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { withRouter } from "react-router-dom";
-import bellIcon from '../assests/images/bellIcon.png';
+import bellIcon from './images/bellIcon.png';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons'

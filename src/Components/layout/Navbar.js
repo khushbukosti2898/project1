@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTachometerAlt, faFire, faAd } from '@fortawesome/free-solid-svg-icons'
-import '../CSS/Navbar.css.scss';
+import './CSS/Navbar.css.scss';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);

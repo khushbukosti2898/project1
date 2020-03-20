@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CSS/home.scss';
-import ClientContract from './ClientContract'
+import ClientContract from './ClientContact/ClientContract'
 
 class Home extends React.Component {
 	constructor(props) {

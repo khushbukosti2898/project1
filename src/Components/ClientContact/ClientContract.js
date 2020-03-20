@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Row, Col, Card } from 'react-bootstrap';
-import { Input, DropDown, CheckBox } from './CommonInput';
+import { Input, DropDown, CheckBox } from '../CommonInput';
 import axios from 'axios'
 import { getPhoneFormat } from './Helper'
 import { payloadFun } from './adervetiserPayload'
@@ -208,10 +208,7 @@ class ClientContract extends React.Component {
     /*  else {
        this.setState({ [objname]: { ...this.state[objname], [b]: '' } })
      } */
-
   }
-
-
   validateField(fieldName, value) {
     let { companyName, webAdd, industryCategory, SalesPerson } = this.state.company
     let { firstName, lastName, email, phone } = this.state.primaryContact;
@@ -413,7 +410,7 @@ class ClientContract extends React.Component {
           <Card style={{ padding: '34px', border: "none" }}>
             <Row>
               <Col md="6">
-                <Input title="Company Name"
+                <Input title="Company Name "
                   isRequired="true"
                   placeholder="Company Name"
                   onChange={(e) => this.handleChange(e, "company")}
@@ -423,7 +420,7 @@ class ClientContract extends React.Component {
               </Col>
               <Col md="6">
                 <Input
-                  title="Company Website Address"
+                  title="Company Website Address "
                   isRequired="true"
                   placeholder="e.g www.abc.com"
                   name="webAdd"
@@ -436,7 +433,7 @@ class ClientContract extends React.Component {
               <Col md="6">
                 <DropDown
                   options={SalesPerson}
-                  title="SalesPerson"
+                  title="Sales Person "
                   isRequired="true"
                   isClearable="true"
                   name="SalesPerson"
@@ -447,7 +444,7 @@ class ClientContract extends React.Component {
               <Col md="6">
                 <DropDown
                   options={industryCategory}
-                  title="industryCategory"
+                  title="Industry Category "
                   isRequired="true"
                   isClearable="true"
                   name="industryCategory"
@@ -463,7 +460,7 @@ class ClientContract extends React.Component {
                     </h6>
               <Row>
                 <Col md="6">
-                  <Input title="First Name"
+                  <Input title="First Name "
                     isRequired="true"
                     placeholder="First Name"
                     name="firstName"
@@ -474,7 +471,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Last Name"
+                    title="Last Name "
                     isRequired="true"
                     placeholder="Last Name"
                     name="lastName"
@@ -485,7 +482,7 @@ class ClientContract extends React.Component {
               </Row>
               <Row>
                 <Col md="6">
-                  <Input title="Email"
+                  <Input title="Email "
                     isRequired="true"
                     placeholder="Email"
                     name="email"
@@ -496,7 +493,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Phone"
+                    title="Phone "
                     isRequired="true"
                     placeholder="Phone"
                     name="phone"
@@ -514,7 +511,7 @@ class ClientContract extends React.Component {
                     </h6>
               <Row>
                 <Col md="6">
-                  <Input title="First Name"
+                  <Input title="First Name "
                     placeholder="First Name"
                     name="firstName"
                     onChange={(e) => this.handleChange(e, "secondaryContact")}
@@ -524,7 +521,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Last Name"
+                    title="Last Name "
                     placeholder="Last Name"
                     name="lastName"
                     onChange={(e) => this.handleChange(e, "secondaryContact")}
@@ -534,7 +531,7 @@ class ClientContract extends React.Component {
               </Row>
               <Row>
                 <Col md="6">
-                  <Input title="Email"
+                  <Input title="Email "
                     placeholder="Email"
                     name="email"
                     onChange={(e) => this.handleChange(e, "secondaryContact")}
@@ -544,7 +541,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Phone"
+                    title="Phone "
                     placeholder="Phone"
                     name="phone"
                     value={this.state.secondaryContact.phone}
@@ -561,7 +558,7 @@ class ClientContract extends React.Component {
                     </h6>
               <Row>
                 <Col md="6">
-                  <Input title="Address"
+                  <Input title="Address "
                     isRequired="true"
                     placeholder="Address"
                     name="address"
@@ -572,7 +569,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Address line 2"
+                    title="Address line 2 "
                     placeholder="Address"
                     name="address2"
                     onChange={(e) => this.handleChange(e, "businessAddress")}
@@ -592,7 +589,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <DropDown
-                    title="Country"
+                    title="Country "
                     isRequired="true"
                     isClearable="true"
                     options={this.state.country}
@@ -608,8 +605,8 @@ class ClientContract extends React.Component {
                 <Col md="6">
                   <DropDown
                     name="stateProviance"
-                    title={(country === "") ? "State/Province" :
-                      (country.value === 'US') ? "State" : "Province"
+                    title={(country === "") ? "State/Province " :
+                      (country.value === 'US') ? "State " : "Province "
                     }
                     isRequired="true"
                     placeholder="State"
@@ -646,7 +643,7 @@ class ClientContract extends React.Component {
 
               <Row>
                 <Col md="6">
-                  <Input title="Address"
+                  <Input title="Address "
                     isRequired="true"
                     placeholder="Address"
                     name="billaddress"
@@ -659,7 +656,7 @@ class ClientContract extends React.Component {
                 </Col>
                 <Col md="6">
                   <Input
-                    title="Address line 2"
+                    title="Address line 2 "
                     placeholder="Address"
                     name="billaddress2"
                     onChange={(e) => this.handleChange(e, "billingAddress")}
@@ -684,7 +681,7 @@ class ClientContract extends React.Component {
                 <Col md="6">
                   <DropDown
                     name="billcountry"
-                    title="Country"
+                    title="Country "
                     isRequired="true"
                     isClearable="true"
                     options={this.state.country}
@@ -700,10 +697,10 @@ class ClientContract extends React.Component {
 
                   <DropDown
                     name="billstateProviance"
-                    title={copyCheck ? ((country === "") ? "State/Province" :
+                    title={copyCheck ? ((country === "") ? "State/Province " :
                       (country.value === 'US') ? "State" : "Province")
-                      : (billcountry === "") ? "State/Province" :
-                        (billcountry.value === 'US') ? "State" : "Province"
+                      : (billcountry === "") ? "State/Province " :
+                        (billcountry.value === 'US') ? "State " : "Province "
                     }
                     isRequired="true"
                     placeholder="State"
